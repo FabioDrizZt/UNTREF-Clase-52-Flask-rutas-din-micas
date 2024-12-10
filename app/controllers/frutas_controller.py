@@ -1,5 +1,6 @@
 from flask import jsonify
 from app.models.fruta_model import *
+# from app.models.fruta_file import *
 
 def get_all_frutas_controller():
   try:

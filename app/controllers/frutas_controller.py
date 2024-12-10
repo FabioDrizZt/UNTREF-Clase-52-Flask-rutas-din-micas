@@ -1,5 +1,5 @@
 from flask import jsonify
-from app.models.fruta_model import get_all_frutas
+from app.models.fruta_model import *
 
 def get_all_frutas_controller():
   try:
@@ -9,4 +9,24 @@ def get_all_frutas_controller():
     return jsonify(frutas), 200
   except TypeError as err:
     print('Error al obtener las frutas: ', err)
+    return []
+  
+def get_all_frutas_by_id_controller(id):
+  try:
+    fruta = get_all_frutas_by_id(int(id))
+    if not fruta:
+      jsonify({'message': 'No se encontró la fruta' }), 500
+    return jsonify(fruta), 200
+  except TypeError as err:
+    print('Error al obtener la fruta: ', err)
+    return []
+  
+def get_all_frutas_by_name_controller(name):
+  try:
+    fruta = get_all_frutas_by_name(name)
+    if not fruta:
+      jsonify({'message': 'No se encontró la fruta' }), 500
+    return jsonify(fruta), 200
+  except TypeError as err:
+    print('Error al obtener la fruta: ', err)
     return []

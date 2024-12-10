@@ -10,3 +10,8 @@ GET http://127.0.0.1:5000/frutas/2
 
 # Traer fruta por nombre
 GET http://127.0.0.1:5000/frutas/nombre/Manzanas
+
+###
+
+# Traer fruta con importe mayor a 300
+GET http://127.0.0.1:5000/frutas/precio/300

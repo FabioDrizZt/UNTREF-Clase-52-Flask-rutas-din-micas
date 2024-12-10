@@ -30,3 +30,13 @@ def get_all_frutas_by_name_controller(name):
   except TypeError as err:
     print('Error al obtener la fruta: ', err)
     return []
+  
+def get_all_frutas_by_price_controller(importe):
+  try:
+    fruta = get_all_frutas_by_price(int(importe))
+    if not fruta:
+      jsonify({'message': 'No se encontró la fruta' }), 500
+    return jsonify(fruta), 200
+  except TypeError as err:
+    print('Error al obtener la fruta: ', err)
+    return []

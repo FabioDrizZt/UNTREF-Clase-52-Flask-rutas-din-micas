@@ -7,3 +7,7 @@ frutas_bp.route("/frutas", methods=["GET"])(get_all_frutas_controller)
 frutas_bp.route("/frutas/<id>", methods=["GET"])(get_all_frutas_by_id_controller)
 frutas_bp.route("/frutas/nombre/<name>", methods=["GET"])(get_all_frutas_by_name_controller)
 frutas_bp.route("/frutas/precio/<importe>", methods=["GET"])(get_all_frutas_by_price_controller)
+
+frutas_bp.route("/frutas", methods=["POST"])(create_fruta_controller)
+frutas_bp.route("/frutas/<id>", methods=["PUT"])(update_fruta_controller)
+frutas_bp.route("/frutas/<id>", methods=["DELETE"])(delete_fruta_controller)

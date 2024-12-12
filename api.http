@@ -4,7 +4,7 @@ GET http://127.0.0.1:5000/frutas
 ###
 
 # Traer fruta por id
-GET http://127.0.0.1:5000/frutas/4
+GET http://127.0.0.1:5000/frutas/17
 
 ###
 
@@ -15,3 +15,32 @@ GET http://127.0.0.1:5000/frutas/nombre/Manzanas
 
 # Traer fruta con importe mayor a 300
 GET http://127.0.0.1:5000/frutas/precio/300
+
+###
+
+# Crear una nueva fruta
+POST http://127.0.0.1:5000/frutas
+Content-Type: application/json
+
+{
+  "imagen": "img01",
+  "nombre": "piña",
+  "precio": 150.50
+}
+
+###
+
+# Modificar una fruta existente
+PUT http://127.0.0.1:5000/frutas/17
+Content-Type: application/json
+
+{
+  "imagen": "img02",
+  "nombre": "Banana",
+  "precio": 200.00
+}
+
+###
+
+# Eliminar una fruta
+DELETE http://127.0.0.1:5000/frutas/17
